@@ -66,6 +66,10 @@ document.getElementById("transaction-list").addEventListener("click",function(ev
         localStorage.setItem("transactions",JSON.stringify(transactions));
 
         renderTransactions();
+        updateTotals();
+        updateMonthlySummary();
+        updateCategoryChart();
+
     }
     if(event.target.classList.contains("edit-btn")){
         const id = Number(event.target.dataset.id);
@@ -80,6 +84,10 @@ document.getElementById("transaction-list").addEventListener("click",function(ev
         document.getElementById("category").value = transaction.category;
         document.getElementById("date").value = transaction.date;
         document.getElementById("description").value = transaction.description;
+        document.getElementById("transaction-form").scrollIntoView({
+            behavior: "smooth"
+        });
+
     }
 });
 
@@ -288,6 +296,8 @@ form.addEventListener("submit",function(event){
 
     renderTransactions();
     updateTotals();
+    updateMonthlySummary();
+    updateCategoryChart();
 
     console.log(transactions);
 
