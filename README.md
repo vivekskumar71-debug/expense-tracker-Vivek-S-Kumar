@@ -35,7 +35,6 @@ Transactions are stored in the browser's Local Storage, so the data remains avai
 
 ## Project Structure
 
-   text
 expense-tracker-Vivek_S_Kumar/
 │
 ├── index.html
